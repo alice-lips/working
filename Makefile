@@ -1,4 +1,4 @@
 git:
 	git add --all
-	git commit
+	git commit -m "`kasitime`"
 	git push
