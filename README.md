@@ -1,4 +1,4 @@
 alice.lips
 ==========
 
-Alice.lips
+非公開レポジトリ
