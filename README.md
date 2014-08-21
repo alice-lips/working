@@ -23,7 +23,9 @@ https://github.com/cympfh/private-alice/issues
 もちろん Twitter などで議論するのもよいが、
 特にissueはTODOリストを兼ねるので、
 
-仕事の*依頼相手を指定*して、issue を立てる → 仕事が終わったらissue を*close* する
+```
+仕事の*依頼相手を指定 (assign)*して、issue を立てる (open) → 仕事が終わったらissue を*close* する
+```
 
 ってのをやる．
 きっと便利なはず．
