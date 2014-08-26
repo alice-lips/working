@@ -15,8 +15,11 @@ main = (game) ->
     game.pushScene scene
     label = new Label t
     label.color = do random_color
-    label.moveTo 20, (H * 0.8 | 0)
+    margin = 20
+    label.moveTo margin, H - margin - 30 # TODO: ここはたぶん、描画した後に計算しなおすのが一番いい
+    label._width = W - margin - margin
     scene.addChild label
+    window._ = label
 
     scene.addEventListener 'touchstart', (e) ->
       page idx + 1

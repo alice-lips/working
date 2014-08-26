@@ -5,7 +5,7 @@
   main = function(game) {
     var page;
     page = function(idx, first) {
-      var I, label, scene, t;
+      var I, label, margin, scene, t;
       if (first == null) {
         first = false;
       }
@@ -23,8 +23,11 @@
       game.pushScene(scene);
       label = new Label(t);
       label.color = random_color();
-      label.moveTo(20, H * 0.8 | 0);
+      margin = 20;
+      label.moveTo(margin, H - margin - 30);
+      label._width = W - margin - margin;
       scene.addChild(label);
+      window._ = label;
       return scene.addEventListener('touchstart', function(e) {
         return page(idx + 1);
       });
