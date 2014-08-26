@@ -5,6 +5,7 @@
 <style>
 div#enchant-stage {
   border: 1px black solid;
+  width: 100%;
 }
 </style>
 <script src='./include/enchant.js'></script>
@@ -13,12 +14,14 @@ div#enchant-stage {
 
 <body>
 <div id='enchant-stage'></div>
+<script src='./lib/getSize.js'></script>
 <script src='./lib/images.js'></script>
 <script src='./lib/text.js'></script>
 <script>
 enchant();
 window.onload = function() {
-  var game = new Game(640, 480);
+
+  var game = new Game(W, H);
   for (var i=0; i < images.length; ++i) game.preload(images[i]);
   game.onload = function () { main(game); };
   game.start();

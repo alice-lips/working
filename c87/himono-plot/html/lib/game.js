@@ -23,7 +23,7 @@
       game.pushScene(scene);
       label = new Label(t);
       label.color = random_color();
-      label.moveTo(20, 420);
+      label.moveTo(20, H * 0.8 | 0);
       scene.addChild(label);
       return scene.addEventListener('touchstart', function(e) {
         return page(idx + 1);

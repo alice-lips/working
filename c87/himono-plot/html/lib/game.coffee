@@ -15,7 +15,7 @@ main = (game) ->
     game.pushScene scene
     label = new Label t
     label.color = do random_color
-    label.moveTo 20, 420
+    label.moveTo 20, (H * 0.8 | 0)
     scene.addChild label
 
     scene.addEventListener 'touchstart', (e) ->
