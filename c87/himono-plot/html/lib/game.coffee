@@ -2,8 +2,6 @@ main = (game) ->
 
   page = (idx) ->
 
-    console.log 'page', idx
-
     I = texts.length
     idx = Math.max idx, 0
     idx = Math.min idx, I - 1

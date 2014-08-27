@@ -6,7 +6,6 @@
     var idx, page;
     page = function(idx) {
       var I, t;
-      console.log('page', idx);
       I = texts.length;
       idx = Math.max(idx, 0);
       idx = Math.min(idx, I - 1);
