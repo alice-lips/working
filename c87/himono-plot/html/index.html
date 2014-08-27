@@ -10,10 +10,14 @@ div#enchant-stage {
 div.box {
   left: 0;
   bottom: 0;
-  margin: 10px;
   font-size: 21px;
   font-family: 'あくあふぉんと', 'メイリオ', 'ＭＳ ゴシック';
   cursor: default;
+
+  /* gradient */
+  background: -moz-linear-gradient(top center, #fff 0%, #faa 100%);
+  background: -webkit-gradient(linear, center top, center bottom, from(#fff), to(#faa));
+  background: linear-gradient(top center, #fff 0%, #faa 100%);
 }
 </style>
 <script src='./include/enchant.js'></script>

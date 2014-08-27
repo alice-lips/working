@@ -20,5 +20,4 @@ main = (game) ->
     ++idx
     page idx
 
-
 window.main = main
