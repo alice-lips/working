@@ -3,12 +3,10 @@
   var main;
 
   main = function(game) {
-    var page;
-    page = function(idx, first) {
-      var I, label, margin, scene, t;
-      if (first == null) {
-        first = false;
-      }
+    var idx, page;
+    page = function(idx) {
+      var I, t;
+      console.log('page', idx);
       I = texts.length;
       idx = Math.max(idx, 0);
       idx = Math.min(idx, I - 1);
@@ -16,23 +14,15 @@
       if (t === '') {
         t = '...';
       }
-      if (!first) {
-        game.popScene();
-      }
-      scene = new Scene;
-      game.pushScene(scene);
-      label = new Label(t);
-      label.color = random_color();
-      margin = 20;
-      label.moveTo(margin, H - margin - 30);
-      label._width = W - margin - margin;
-      scene.addChild(label);
-      window._ = label;
-      return scene.addEventListener('touchstart', function(e) {
-        return page(idx + 1);
-      });
+      game.box.innerHTML = t;
+      return game.box.style.color = random_color();
     };
-    return page(0, true);
+    page(0);
+    idx = 0;
+    return game._element.addEventListener('click', function(e) {
+      ++idx;
+      return page(idx);
+    });
   };
 
   window.main = main;

@@ -4,7 +4,7 @@
 
   random_color = function() {
     var list;
-    list = ['red', 'black', 'pink', 'blue', 'green'];
+    list = ['red', 'black', 'aqua', 'blue', 'green'];
     return list[list.length * Math.random() | 0];
   };
 

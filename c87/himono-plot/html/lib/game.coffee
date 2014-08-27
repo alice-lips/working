@@ -1,6 +1,8 @@
 main = (game) ->
 
-  page = (idx, first=false) ->
+  page = (idx) ->
+
+    console.log 'page', idx
 
     I = texts.length
     idx = Math.max idx, 0
@@ -9,21 +11,14 @@ main = (game) ->
     t = texts[idx]
     t = '...' if t is ''
 
-    do game.popScene if not first
+    game.box.innerHTML = t
+    game.box.style.color = do random_color
 
-    scene = new Scene
-    game.pushScene scene
-    label = new Label t
-    label.color = do random_color
-    margin = 20
-    label.moveTo margin, H - margin - 30 # TODO: ここはたぶん、描画した後に計算しなおすのが一番いい
-    label._width = W - margin - margin
-    scene.addChild label
-    window._ = label
+  page 0
+  idx = 0
+  game._element.addEventListener 'click', (e) ->
+    ++idx
+    page idx
 
-    scene.addEventListener 'touchstart', (e) ->
-      page idx + 1
-
-  page 0, true
 
 window.main = main

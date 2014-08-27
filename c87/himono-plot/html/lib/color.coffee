@@ -2,7 +2,7 @@ random_color = ->
   list = [
     'red'
     'black'
-    'pink'
+    'aqua'
     'blue'
     'green'
   ]

@@ -1,29 +1,42 @@
 <!DOCTYPE html>
 <html><head>
 <meta charset='UTF-8'>
-<title>enchant test</title>
+<title>fuck the enchant.js</title>
 <style>
 div#enchant-stage {
   border: 1px black solid;
   width: 100%;
 }
+div.box {
+  left: 0;
+  bottom: 0;
+  margin: 10px;
+  font-size: 21px;
+  font-family: 'あくあふぉんと', 'メイリオ', 'ＭＳ ゴシック';
+  cursor: default;
+}
 </style>
 <script src='./include/enchant.js'></script>
+<script src='./include/box.js'></script>
+<!-- <script src='./include/resize.js'></script> -->
+
 <script src='./lib/color.js'></script>
 <script src='./lib/game.js'></script>
-
-<body>
-<div id='enchant-stage'></div>
-<script src='./lib/getSize.js'></script>
+<script src='./lib/size.js'></script>
 <script src='./lib/images.js'></script>
 <script src='./lib/text.js'></script>
+</head>
+<body>
+<div id='enchant-stage'></div>
 <script>
 enchant();
+var game; // TODO: hidden `game` in the following closure
 window.onload = function() {
-
-  var game = new Game(W, H);
-  for (var i=0; i < images.length; ++i) game.preload(images[i]);
+  game = new Game(W, H);
+  images.forEach(function (m) { game.preload(m) });
   game.onload = function () { main(game); };
+  make_box(game, 'box');
+  //resize_ctrl(game);
   game.start();
 };
 </script>
