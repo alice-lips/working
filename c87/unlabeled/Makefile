@@ -1,2 +1,2 @@
 all:
-	cat plots/intro.md plots/1.md > README.txt
+	cat plots/intro.md plots/2.md > README.txt
