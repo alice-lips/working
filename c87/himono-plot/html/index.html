@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html><head>
 <meta charset='UTF-8'>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <title>fuck the enchant.js</title>
 <style>
 div#enchant-stage {
   border: 1px black solid;
   width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 div.box {
   left: 0;
@@ -20,7 +24,8 @@ div.box {
   background: linear-gradient(top center, #fff 0%, #faa 100%);
 }
 </style>
-<script src='./include/enchant.js'></script>
+<!-- <script src='./include/enchant.js'></script> -->
+<script src='./include/enfuck.js'></script>
 <script src='./include/box.js'></script>
 <!-- <script src='./include/resize.js'></script> -->
 
@@ -31,16 +36,24 @@ div.box {
 <script src='./lib/text.js'></script>
 </head>
 <body>
-<div id='enchant-stage'></div>
+<div id='enchant-stage'>The stage.</div>
 <script>
-enchant();
+// enchant();
 var game; // TODO: hidden `game` in the following closure
 window.onload = function() {
-  game = new Game(W, H);
-  images.forEach(function (m) { game.preload(m) });
-  game.onload = function () { main(game); };
+  set_size();
+  // game = new Game(W, H);
+  game = newGame(W, H, images);
+
+  // images.forEach(function (m) { game.preload(m) });
+  // game.onload = function () { main(game); };
+
+  game._element.innerHTML = '';
+  game._element.appendChild(game.canvas);
+
   make_box(game, 'box');
+  main(game);
   //resize_ctrl(game);
-  game.start();
+  // game.start();
 };
 </script>
