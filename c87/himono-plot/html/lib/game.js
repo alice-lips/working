@@ -11,7 +11,6 @@
       idx = Math.min(idx, I - 1);
       t = texts[idx];
       if (t.image != null) {
-        console.log(t.image);
         return game.ctx.drawImage(t.image, 0, 0, W, H);
       } else {
         if (t === '') {
