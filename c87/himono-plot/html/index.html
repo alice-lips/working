@@ -1,59 +1,15 @@
-<!DOCTYPE html>
-<html><head>
-<meta charset='UTF-8'>
-<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
-<title>fuck the enchant.js</title>
 <style>
-div#enchant-stage {
-  margin: 2px;
-  width: 99%;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-div.box {
-  left: 0;
-  bottom: 0;
-  min-height: 3em;
-  font-size: 21px;
-  font-family: 'あくあふぉんと', 'メイリオ', 'ＭＳ ゴシック';
-  cursor: default;
-
-  /* gradient */
-  background: -moz-linear-gradient(top center, #fff 0%, #faa 100%);
-  background: -webkit-gradient(linear, center top, center bottom, from(#fff), to(#faa));
-  background: linear-gradient(top center, #fff 0%, #faa 100%);
+iframe {
+  width: 660px;
+  height: 520px;
+  border-image: 0;
+  border-style: none none none solid;
+  border-width: 0 0 0 0;
 }
 </style>
-<!-- <script src='./include/enchant.js'></script> -->
-<script src='./include/enfuck.js'></script>
-<script src='./include/box.js'></script>
-<!-- <script src='./include/resize.js'></script> -->
-
-<script src='./lib/color.js'></script>
-<script src='./lib/game.js'></script>
-<script src='./lib/images.js'></script>
-<script src='./lib/text.js'></script>
-</head>
 <body>
-<div id='enchant-stage'>The stage.</div>
-<script>
-// enchant();
-var W = 640, H = 480;
-var game; // TODO: hidden `game` in the following closure
-window.onload = function() {
-  // game = new Game(W, H);
-  game = newGame(W, H, images);
+<div>TODO: スマホからみたら <a href='./inner.html'><code>inner.html</code></a> で飛ぶようにする．</div><hr>
 
-  // images.forEach(function (m) { game.preload(m) });
-  // game.onload = function () { main(game); };
-
-  game._element.innerHTML = '';
-  game._element.appendChild(game.canvas);
-
-  make_box(game, 'box');
-  main(game);
-  //resize_ctrl(game);
-  // game.start();
-};
-</script>
+<center>
+<iframe src='./inner.html'></iframe>
+</center>

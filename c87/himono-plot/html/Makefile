@@ -1,4 +1,4 @@
-all: lib/text.js lib/game.js lib/color.js lib/images.js include/enfuck.js
+all: lib/text.js lib/game.js lib/color.js lib/images.js include/vnc.js
 
 %.js: %.coffee
 	coffee -c $^
