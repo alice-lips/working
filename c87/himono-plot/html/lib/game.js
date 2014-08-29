@@ -10,11 +10,16 @@
       idx = Math.max(idx, 0);
       idx = Math.min(idx, I - 1);
       t = texts[idx];
-      if (t === '') {
-        t = '...';
+      if (t.image != null) {
+        console.log(t.image);
+        return game.ctx.drawImage(t.image, 0, 0, W, H);
+      } else {
+        if (t === '') {
+          t = '...';
+        }
+        game.box.innerHTML = t;
+        return game.box.style.color = random_color();
       }
-      game.box.innerHTML = t;
-      return game.box.style.color = random_color();
     };
     page(0);
     idx = 0;

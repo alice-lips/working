@@ -2,7 +2,7 @@
 (function() {
   var newGame;
 
-  newGame = function(W, H, images) {
+  newGame = function(W, H) {
     var game;
     game = {};
     game._element = document.getElementById('stage');
@@ -14,9 +14,9 @@
     game.canvas.height = H;
     game.box = document.createElement('div');
     game.box.className = 'box';
-    game.box.style.width = (W - 20) + 'px';
-    game.box.style.minWidth = (W - 20) + 'px';
-    game.box.style.maxWidth = (W - 20) + 'px';
+    game.box.style.width = (W - 10) + 'px';
+    game.box.style.minWidth = (W - 10) + 'px';
+    game.box.style.maxWidth = (W - 10) + 'px';
     game._element.appendChild(game.canvas);
     game._element.appendChild(game.box);
     return game;

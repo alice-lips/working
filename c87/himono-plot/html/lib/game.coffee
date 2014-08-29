@@ -7,10 +7,14 @@ main = (game) ->
     idx = Math.min idx, I - 1
 
     t = texts[idx]
-    t = '...' if t is ''
 
-    game.box.innerHTML = t
-    game.box.style.color = do random_color
+    if t.image?
+      console.log t.image
+      game.ctx.drawImage t.image, 0, 0, W, H
+    else
+      t = '...' if t is ''
+      game.box.innerHTML = t
+      game.box.style.color = do random_color
 
   page 0
   idx = 0
