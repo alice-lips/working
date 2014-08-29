@@ -5,8 +5,8 @@
 <title>fuck the enchant.js</title>
 <style>
 div#enchant-stage {
-  border: 1px black solid;
-  width: 100%;
+  margin: 2px;
+  width: 99%;
   position: absolute;
   left: 0;
   top: 0;
@@ -14,6 +14,7 @@ div#enchant-stage {
 div.box {
   left: 0;
   bottom: 0;
+  min-height: 3em;
   font-size: 21px;
   font-family: 'あくあふぉんと', 'メイリオ', 'ＭＳ ゴシック';
   cursor: default;
@@ -39,9 +40,10 @@ div.box {
 <div id='enchant-stage'>The stage.</div>
 <script>
 // enchant();
+var W = 640, H = 480;
 var game; // TODO: hidden `game` in the following closure
 window.onload = function() {
-  set_size();
+  // set_size();
   // game = new Game(W, H);
   game = newGame(W, H, images);
 
