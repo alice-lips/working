@@ -1,4 +1,5 @@
-newGame = (W, H) ->
+newGame = (W, H, cont) ->
+
   game = {}
   game._element = document.getElementById 'stage'
 
@@ -10,6 +11,15 @@ newGame = (W, H) ->
   game.canvas.width = W
   game.canvas.height= H
 
+  # draw the `loading`
+  game.ctx.fillText 'loading', 300, 200
+  game.ctx.beginPath()
+  game.ctx.rect 250, 210, 140, 10
+  game.ctx.stroke()
+  game.ctx.beginPath()
+  game.ctx.rect 252, 212, 40, 6
+  game.ctx.fill()
+
   game.box = document.createElement 'div'
   game.box.className = 'box'
   game.box.style.width = (W - 10) + 'px'
@@ -18,6 +28,13 @@ newGame = (W, H) ->
 
   game._element.appendChild game.canvas
   game._element.appendChild game.box
+
+  rec = ->
+    if window.image_count.loaded * 2 > window.image_count.total
+      cont game
+    else
+      setTimeout rec, 100
+  do rec
 
   game
 

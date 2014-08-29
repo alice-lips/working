@@ -1,9 +1,17 @@
+window.image_count =
+  loaded: 0
+  total: 0
+
+inc_load = -> ++window.image_count.loaded
+
+# construct the background image
 image = (src) ->
   img = new Image
   img.src = src
+  img.onload = inc_load
   { image: img }
 
-window.texts = [
+texts = [
   image 'img/Untitled.png'
   "浮浪者同然のクリス（主人公）は廃棄されていたボロボロなビートルを自分で直し、タクシー運転手として生活水準のギリギリなその日暮らしをしていた。"
   "海辺に車を停め、降りて身体を車体に預ける。タバコを吹かしながら乗車してくれそうな客を探すわけでもなくぼーっと待つ。"
@@ -792,3 +800,6 @@ window.texts = [
   "クリストファー（Christopher）は、英語、デンマーク語の男性名、姓。「キリストを運ぶ・担うもの」を意味する。"
   ""
 ]
+
+window.image_count.total = texts.filter((o) -> o.image?).length
+window.texts = texts
