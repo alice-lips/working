@@ -10,25 +10,14 @@ Alice.lips 関連のファイルを全て本レポジトリで管理する．
 一つのプロジェクトを一つのレポジトリとして、
 https://github.com/alice-lips
 にコピーすることにする．
-そちらは、公開のためだけに使うことにする．
 
-議論や仕事の依頼は本レポジトリの上で行う．
+そちらは、公開のためだけに使うことにする．  
+というかそっちに置いたら何でも公開された状態になるので註意。
 
-- 議論はwikiで (良いようにページを作る)
-https://github.com/cympfh/private-alice/wiki
-
-- 仕事の依頼はissueを立てるカタチで
+Twitterでするには長いような議論は issue を立てる。
 https://github.com/cympfh/private-alice/issues
 
-もちろん Twitter などで議論するのもよいが、
-特にissueはTODOリストを兼ねるので、
-
-```
-仕事の*依頼相手を指定 (assign)*して、issue を立てる (open) → 仕事が終わったらissue を*close* する
-```
-
-ってのをやる．
-きっと便利なはず．
+TODOリストも兼ねるので、終わったら close する。
 
 ### TODO:
 パスワード付きで公開するとかそういうことは、
@@ -44,10 +33,11 @@ https://github.com/cympfh/private-alice/issues
 `(公開する場)/(プロジェクト名)/README.md`
 あるいは `README.txt` を置くこと．
 
-(e.g.
+### e.g.
+
 次の冬コミは `c87` なので
 `c87/project-dummy/`
-とする．)
+とする
 
 共通して使うかもしれない、または使う予定はまだないものは、トップにある
 `misc/`
