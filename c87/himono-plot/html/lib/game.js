@@ -3,8 +3,13 @@
   var main;
 
   main = function(game) {
-    var idx, page;
-    page = function(idx) {
+    var idx, next, page;
+    idx = 0;
+    next = function() {
+      ++idx;
+      return page();
+    };
+    page = function() {
       var I, t;
       I = texts.length;
       idx = Math.max(idx, 0);
@@ -15,22 +20,21 @@
           console.log(t.image);
         }
         game.ctx.drawImage(t.image, 0, 0, W, H);
-        return game.box.style.display = 'none';
+        game.box.style.display = 'none';
+        next();
+      } else if ((t.trim()) === '') {
+        game.box.style.display = 'none';
       } else {
-        if (t === '') {
-          t = '...';
-        }
         game.box.innerHTML = t;
         game.box.style.color = random_color();
-        return game.box.style.display = 'block';
+        game.box.style.display = 'block';
       }
+      return idx + 1;
     };
     game.ctx.clearRect(0, 0, W, H);
-    page(0);
-    idx = 0;
+    page();
     return game._element.addEventListener('click', function(e) {
-      ++idx;
-      return page(idx);
+      return next();
     });
   };
 
