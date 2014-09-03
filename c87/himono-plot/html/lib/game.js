@@ -14,13 +14,15 @@
         if (typeof console !== "undefined" && console !== null ? console.log : void 0) {
           console.log(t.image);
         }
-        return game.ctx.drawImage(t.image, 0, 0, W, H);
+        game.ctx.drawImage(t.image, 0, 0, W, H);
+        return game.box.style.display = 'none';
       } else {
         if (t === '') {
           t = '...';
         }
         game.box.innerHTML = t;
-        return game.box.style.color = random_color();
+        game.box.style.color = random_color();
+        return game.box.style.display = 'block';
       }
     };
     game.ctx.clearRect(0, 0, W, H);
