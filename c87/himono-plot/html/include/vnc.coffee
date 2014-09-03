@@ -30,7 +30,10 @@ newGame = (W, H, cont) ->
   game._element.appendChild game.box
 
   rec = ->
-    if window.image_count.loaded * 2 > window.image_count.total
+    if window.image_count.loaded * 2 >= window.image_count.total
+      if console?.log
+        console.log 'game start'
+        console.log window.image_count
       cont game
     else
       setTimeout rec, 100

@@ -9,6 +9,7 @@ main = (game) ->
     t = texts[idx]
 
     if t.image?
+      console.log t.image if console?.log
       game.ctx.drawImage t.image, 0, 0, W, H
     else
       t = '...' if t is ''

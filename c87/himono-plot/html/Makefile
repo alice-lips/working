@@ -1,7 +1,7 @@
 all: lib/text.js lib/game.js lib/color.js lib/images.js include/vnc.js
 
 %.js: %.coffee
-	coffee -c $^
+	coffee -bc $^
 
 lib/text.coffee: ../All-apologies.txt
 	echo "window.texts = [" > $@
