@@ -1,8 +1,8 @@
 random_color = ->
   list = [
-    'red'
+    '#702020'
     'black'
-    'aqua'
+    '#007070'
     'blue'
     'green'
   ]
