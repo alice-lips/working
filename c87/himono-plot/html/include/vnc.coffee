@@ -7,6 +7,7 @@ newGame = (W, H, cont) ->
   game._element.style.height = H + 'px'
 
   game.canvas = document.createElement 'canvas'
+  game.canvas.innerHTML = 'canvas element require more modern browser (Chrome, Firefox)'
   game.ctx = game.canvas.getContext '2d'
   game.canvas.width = W
   game.canvas.height= H
