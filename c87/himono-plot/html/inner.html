@@ -31,22 +31,23 @@ div.box {
 }
 canvas {
 }
+code {
+  cursor: default;
+}
 </style>
 <script src='./include/vnc.js'></script>
-<script src='./include/box.js'></script>
-<!-- <script src='./include/resize.js'></script> -->
 
 <script src='./lib/color.js'></script>
 <script src='./lib/game.js'></script>
 <script src='./lib/images.js'></script>
-<script src='./lib/text.js'></script>
+<script src='./lib/plot.js'></script>
+<script src='./lib/page.js'></script>
 </head>
 <body>
 
 <div id='stage'></div>
 
 <script>
-var game;
 var W = 640, H = 480;
 window.onload = function() {
   newGame(W, H, main);

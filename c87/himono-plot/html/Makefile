@@ -1,12 +1,12 @@
-all: lib/text.js lib/game.js lib/color.js lib/images.js include/vnc.js
+all: lib/plot.coffee lib/plot.js lib/game.js lib/color.js lib/images.js include/vnc.js lib/page.js
+
+lib/plot.coffee: lib/plot.txt
+	echo "window.plot = [" > $@
+	cat $^ | grep -v '^$$' | sed 's/"/\&quot;/g' | coffee tools/plot-format.coffee | sed 's/^\(.*\)$$/  \1/' >> $@
+	echo ']' >> $@
 
 %.js: %.coffee
 	coffee -c $^
 
-lib/text.coffee: ../All-apologies.txt
-	echo "window.texts = [" > $@
-	cat ../All-apologies.txt | nkf | sed 's/"/&quot;/g' | sed 's/^\(.*\)$$/  "\1"/' >> $@
-	echo "]" >> $@
-
 clean:
-	rm lib/text.coffee lib/*.js
+	rm lib/plot.coffee lib/*.js

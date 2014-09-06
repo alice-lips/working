@@ -2,19 +2,32 @@
 (function() {
   var main;
 
+  window.main = function(game) {
+    var rec;
+    rec = function() {
+      if (window.image_count.loaded * 2 >= window.image_count.total) {
+        return main(game);
+      } else {
+        return setTimeout(rec, 100);
+      }
+    };
+    return rec();
+  };
+
   main = function(game) {
     var idx, next, page;
     idx = 0;
+    idx = location.search ? +(location.search.split('?'))[1] : 0;
     next = function() {
       ++idx;
       return page();
     };
     page = function() {
       var I, t;
-      I = texts.length;
+      I = pages.length;
       idx = Math.max(idx, 0);
       idx = Math.min(idx, I - 1);
-      t = texts[idx];
+      t = pages[idx];
       if (t.image != null) {
         if (typeof console !== "undefined" && console !== null ? console.log : void 0) {
           console.log(t.image);
@@ -34,7 +47,13 @@
     game.ctx.clearRect(0, 0, W, H);
     page();
     return game._element.addEventListener('click', function(e) {
-      return next();
+      var x, y;
+      x = e.clientX;
+      y = e.clientY;
+      document.title = "" + e.clientX + ", " + e.clientY;
+      if (y > 35) {
+        return next();
+      }
     });
   };
 
