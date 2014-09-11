@@ -1,13 +1,3 @@
-window.main = (game) ->
-
-  # wait for image loading
-  rec = ->
-    if window.image_count.loaded * 2 >= window.image_count.total
-      main game
-    else
-      setTimeout rec, 100
-  do rec
-
 main = (game) ->
 
   idx = 0

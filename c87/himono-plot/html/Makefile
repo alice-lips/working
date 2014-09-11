@@ -1,12 +1,11 @@
-all: lib/plot.coffee lib/plot.js lib/game.js lib/color.js lib/images.js include/vnc.js lib/page.js
+all: lib/pages.js lib/vnc.js
 
-lib/plot.coffee: lib/plot.txt
-	echo "window.plot = [" > $@
-	cat $^ | grep -v '^$$' | sed 's/"/\&quot;/g' | coffee tools/plot-format.coffee | sed 's/^\(.*\)$$/  \1/' >> $@
-	echo ']' >> $@
+lib/pages.js: ./tools/seisho2pages ../All-apologies-seisho.txt
+	./tools/seisho2pages ../All-apologies-seisho.txt lib/pages.js
 
-%.js: %.coffee
-	coffee -c $^
+scripts=lib/color.coffee lib/draw_load.coffee lib/dom.coffee lib/load_img.coffee lib/main.coffee lib/vnc.coffee
+lib/vnc.js: $(scripts)
+	coffee -j $@ -c $(scripts)
 
 clean:
-	rm lib/plot.coffee lib/*.js
+	rm lib/*.js
