@@ -1,0 +1,487 @@
+\page{
+  はじめまして！  でよろしいですか。
+}{
+  いいと思いますよ！
+}
+\page{
+  ちなみに『Scheme手習い』は読んだことはありますか。
+}{
+  \v{\#f} です。
+}
+\page{
+  え、『Scheme手習い』を読んだことがないのですか。
+}{
+  はい
+}
+\page{
+  それは困りましたね。
+}{
+  …
+}
+\page{
+  あ、『Scheme修行』なら読んだことがあるとか。
+}{
+  ええっと…
+}
+\page{
+  線形代数は知っていますか。
+}{
+  はい、線形代数は親友です。
+}
+\page{
+  状態 $\ket{\varphi}$
+  とはなんですか。
+}{
+  qビット
+}
+\page{
+  $\ket{\varphi} = \alpha \ket{0} + \beta \ket{1}$
+}{
+  $\alpha, \beta \in \mathbb{R}$ として
+  $\alpha^2 + \beta^2 = 1$
+}
+\page{
+  $\alpha, \beta \in \mathbb{C}$
+  とするのはまずいですか。
+}{
+  問題ありません。
+  $\alpha^* \alpha + \beta^* \beta = 1$
+}
+\page{
+  $\alpha \in \mathbb{C}$ について
+  $\alpha^*$ とはなんですか。
+}{
+  複素共役です。\\
+  $\alpha = a + bi$ ($a,b\in \mathbb{R}$) とおくと
+  $\alpha^* = a - bi$
+}
+\page{
+  観測を知っていますか。
+}{
+  ええ…たぶん。
+}
+\page{
+  観測はqビットに対する正当な操作です。
+}{
+  なんと。
+}
+\page{
+  $\alpha \ket{0} + \beta \ket{1}$
+  を観測するとどうなりますか。
+}{
+  $\ket{0}$ もしくは $\ket{1}$ のどちらかを観測できます。
+}
+\page{
+  どちらですか？
+}{
+  $\alpha^2$ の確率で $\ket{0}$ を観測します。
+  同様に、
+  $\beta^2$ の確率で $\ket{1}$ を観測します。
+}
+\page{
+  $\alpha, \beta \in \mathbb{C}$ かもしれません。
+}{
+  $\alpha^2$ を $\alpha^* \alpha$、もしくは
+  　$|\alpha|^2$ と読み替えてください！
+}
+\page{
+  我々はSchemerです。
+  $\alpha \ket{0} + \beta \ket{1}$
+  を表現してください。
+}{
+  \v{'(alpha beta)}
+}
+\page{
+  単に並べれば良いのなら、列ベクトル
+  $\binom{\alpha}{\beta}$
+  でもよさそうですね！
+}{
+  問題なさそうです。
+}
+\page{
+  ちょうど
+  50\% の確率で $\ket{0}$ を観測
+  できるような
+  qビット
+  を想像できますか。
+}{
+  はい。
+  $\frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}$
+}
+
+\hline
+\begin{minipage}{.01\hsize}
+  ~
+\end{minipage}
+\begin{minipage}{.39\hsize}
+  先ほどの表現を使いましょう。
+\end{minipage}
+\begin{minipage}{.10\hsize}
+  ~
+\end{minipage}
+\begin{minipage}{.39\hsize}
+  \begin{verbatim}
+(define /sqrt2 (/ (sqrt 2)))
+(list /sqrt2 /sqrt2)
+  \end{verbatim}
+\end{minipage}
+
+\hline
+\begin{minipage}{.01\hsize}
+  ~
+\end{minipage}
+\begin{minipage}{.39\hsize}
+  それだけですか。
+\end{minipage}
+\begin{minipage}{.10\hsize}
+  ~
+\end{minipage}
+\begin{minipage}{.39\hsize}
+  そんなことありません！
+  係数はマイナスにしても問題ないので、
+  実数に限れば
+  \begin{verbatim}
+(list /sqrt2 /sqrt2)
+(list /sqrt2 (- /sqrt2))
+(list (- /sqrt2) /sqrt2)
+(list (- /sqrt2) (- /sqrt2))
+\end{verbatim}
+の4つがあります。
+\end{minipage}
+
+\page{
+  qビットは観測したら2種類だけが見られましたね。
+}{
+  $\ket{0}$
+  と
+  $\ket{1}$
+  です。
+}
+\page{
+  もっと多くの種類を観測できたら便利じゃありませんか。
+}{
+  qビットを並べればよろしいでしょう。
+}
+\page{
+  やってみてもらえますか。
+}{
+  2つ並べれば
+  $\ket{00}$
+  $\ket{01}$
+  $\ket{10}$
+  $\ket{11}$
+  の4つになります.
+}
+\page{
+  2qビットの状態はどうなりますか.
+}{
+  $$\alpha_{00} \ket{00}
+   + \alpha_{01} \ket{01}
+   + \alpha_{10} \ket{10}
+   + \alpha_{11} \ket{11}$$
+   ただし
+  $\sum |\alpha_{ij}|^2 = 1$
+}
+\page{
+  $\ket{00}$
+  $\ket{01}$
+  $\ket{10}$
+  $\ket{11}$
+  の替りに
+  $\ket{0}$
+  $\ket{1}$
+  $\ket{2}$
+  $\ket{3}$
+  と書いたほうが読みやすいですね。
+}{
+  ただのエイリアス(別名)ですけどね。
+}
+\page{
+  一般に多qビットが取る状態を記述できますか。
+}{
+  $m$qビットだとして:\\
+  $\sum_{i=0}^{2^m - 1} \alpha_i \ket{i}$
+}
+\page{
+  $\sum_{i=0}^{n - 1} \alpha_i \ket{i}$
+}{
+  それでいいなら、いいですけど。
+}
+\page{
+  $( \alpha_0, \alpha_1, \ldots, \alpha_{n-1} )^\top$
+}{
+  係数を並べただけですね。
+}
+\page{
+  これは列ベクトルです。
+}{
+  $(~)^\top$ はそういうリテラルです。
+}
+\page{
+  これを観測してみてください。
+}{
+  確率 $|\alpha_i|^2$ で $\ket{i}$ が観測できました。
+}
+\page{
+  観測はそれだけですか？
+}{
+  とんでもありません？
+}
+\page{
+  もう一度、先ほどの多qビットを観測してください。
+}{
+  $\ket{i}$ が観測できました。
+}
+\page{
+  その $i$ はもっと前に出てきた $i$ と同じものですか。
+}{
+  ええ、これからもずっと
+  $\ket{i}$ が観測されます。
+}
+
+\page{観測という操作を書いてみましょう}{名前は何がいいですか。}
+
+\hline
+\begin{minipage}{.01\hsize}
+  ~
+\end{minipage}
+\begin{minipage}{.39\hsize}
+  \v{observe} 
+  でよいでしょう。
+\end{minipage}
+\begin{minipage}{.10\hsize}
+  ~
+\end{minipage}
+\begin{minipage}{.39\hsize}
+  \begin{verbatim}
+(use srfi-1)
+(use srfi-27)
+(define (observe q)
+  (let ((i (random-integer (length q))))
+    (map (lambda (j) (if (= j i) 1 0))
+      (iota (length q)))))
+  \end{verbatim}
+\end{minipage}
+
+\page{
+  使っている処理系はなんですか。
+}{
+  \v{Gauche scheme shell, version 0.9.4 [utf-8,pthreads], x86\_64-unknown-linux-gnu}
+}
+
+\hline
+\begin{minipage}{.01\hsize}
+  ~
+\end{minipage}
+\begin{minipage}{.39\hsize}
+  \begin{verbatim}
+(define phi
+  (list /sqrt2 /sqrt2))
+  \end{verbatim}
+\end{minipage}
+\begin{minipage}{.10\hsize}
+  ~
+\end{minipage}
+\begin{minipage}{.39\hsize}
+  \begin{verbatim}
+gosh> phi
+(0.7071067811865475 0.7071067811865475)
+gosh> (set! phi (observe phi))
+(0 1)
+  \end{verbatim}
+\end{minipage}
+
+\page{
+  \v{set!} を含めてマクロにしてしまっても良いかもしれませんね。
+}{
+  それはやめておきましょう。
+}
+
+\page{
+  \v{'(a b)} に左から
+  $\left(
+    \begin{array}{cc}
+      0 & 1 \\
+      1 & 0 \\
+    \end{array}
+  \right)$
+を掛けてください。
+}{
+  $\left(
+    \begin{array}{cc}
+      0 & 1 \\
+      1 & 0 \\
+    \end{array}
+  \right)
+  \left(
+    \begin{array}{c}
+      a \\ b
+    \end{array}
+  \right)
+  =
+  \left(
+    \begin{array}{c}
+      b \\ a
+    \end{array}
+  \right)$
+}
+
+\page{どうなりましたか。}
+{$\ket{0}$ と $\ket{1}$ を観測できる確率が入れ替わりました。}
+
+\page{ところで、$\ket{0}$ を捕まえることができますか。}
+{難しいでしょう}
+
+
+\hline
+\begin{minipage}{.01\hsize}
+  ~
+\end{minipage}
+\begin{minipage}{.39\hsize}
+  では、qビットの発生源を用意します。
+  \begin{verbatim}
+(define (random-q)
+  (let ((a (- (random-real) 0.5))
+        (b (- (random-real) 0.5)))
+    (let ((Z (sqrt (+ (* a a)
+                      (* b b)))))
+      (list (/ a Z) (/ b Z)))))
+  \end{verbatim}
+\end{minipage}
+\begin{minipage}{.10\hsize}
+  ~
+\end{minipage}
+\begin{minipage}{.39\hsize}
+  \begin{verbatim}
+  gosh> (observe (random-q))
+  (1 0)
+  gosh> (observe (random-q))
+  (1 0)
+  gosh> (observe (random-q))
+  (0 1)
+  gosh> (observe (random-q))
+  (0 1)
+  \end{verbatim}
+  二回に一回は $\ket{0}$ が捕まえられますね。
+\end{minipage}
+
+\page{
+  $\ket{1}$ が来たら
+  $\left(
+    \begin{array}{cc}
+      0 & 1 \\
+      1 & 0 \\
+    \end{array}
+  \right)$
+  を掛けてください。
+}{
+  $$
+  \left(
+    \begin{array}{cc}
+      0 & 1 \\
+      1 & 0 \\
+    \end{array}
+  \right)
+  \left(
+    \begin{array}{cc}
+      0\\
+      1\\
+    \end{array}
+  \right)
+=
+  \left(
+    \begin{array}{c}
+      1 \\
+      0 \\
+    \end{array}
+  \right)
+$$
+}
+
+
+
+\hline
+\begin{minipage}{.01\hsize}
+  ~
+\end{minipage}
+\begin{minipage}{.39\hsize}
+  これを Xゲート
+  と言います。忘れないうちに定義しておきましょう！
+\end{minipage}
+\begin{minipage}{.10\hsize}
+  ~
+\end{minipage}
+\begin{minipage}{.39\hsize}
+  \begin{verbatim}
+(define (X p)
+  (list (ref p 0)
+        (ref p 1)))
+  \end{verbatim}
+\end{minipage}
+
+\page{
+  qビットにはZゲートを掛けることもできます。
+  Zゲートは次の行列で表現されます。
+  $$
+  \left( \begin{array}{cc}
+    1 & 0 \\
+    0 & -1
+  \end{array} \right)
+  $$
+}{
+  $$
+  \left( \begin{array}{cc}
+    1 & 0 \\
+    0 & -1
+\end{array} \right)
+\left( \begin{array}{c}
+    a \\ b
+\end{array} \right)
+  =
+  \left( \begin{array}{c}
+    a \\ -b
+\end{array} \right)
+  $$
+}
+
+\page{
+  XもZもユニタリー変換です。
+  ユニタリーって知ってますよね。
+}{
+  ユニタリー行列ならしってます。
+  $$U^\dagger U = I$$
+  となる行列$U$
+  です。
+}
+\page{
+  $U^\dagger$ は転置共役行列ですか。
+}{そうです。}
+
+
+\page{
+  もっと簡単に説明できますか。
+}
+{
+  行列$U$ の第$i$列目だけを取り出してできるベクトルを $u_i$ とすると、
+  $$u_i^* u_j = \delta_{i,j}$$
+  です。
+}
+
+\page{
+$\delta_{i,j}$ とはクロネッカーのデルタのことですね。}
+{そうです。
+  $$\delta_{i,j} = \begin{cases}
+    1 & i = j \text{ のとき} \\
+    0 & i \ne j \text{ のとき}
+  \end{cases}$$
+}
+
+\page{
+  多qビットへの操作として、
+  任意の $n \times n$ ユニタリー行列: $U$ でもって
+  $$\ket{\varphi} \mapsto U \ket{\varphi}$$
+  とできます。
+}{
+  任意のユニタリー行列ですか。それは驚きですね。
+}
+

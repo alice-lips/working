@@ -1,0 +1,42 @@
+\def\hline{\begin{center}\rule{.99\textwidth}{0.4pt}\end{center}}
+
+\fontsize{10pt}{10pt}
+\selectfont
+
+\def\page#1#2{
+\hline
+\begin{minipage}{.01\hsize}
+  ~
+\end{minipage}
+\begin{minipage}{.39\hsize}
+#1
+\end{minipage}
+\begin{minipage}{.10\hsize}
+  ~
+\end{minipage}
+\begin{minipage}{.39\hsize}
+#2
+\end{minipage}
+}
+
+\subsection*{はじめましてのご挨拶}
+\input qscheme/1.tex
+
+\subsection*{さんぽみち}
+\input qscheme/2.tex
+
+\hline
+
+\subsection*{参考図書}
+\begin{enumerate}
+  \item
+    Daniel P. Friedman, Matthias Felleisen, 元吉 文男 (訳), 横山 晶一 (訳):
+    ``Scheme手習い'', オーム社, 2010
+  \item
+    Daniel P. Friedman, Matthias Felleisen, 元吉 文男 (訳), 横山 晶一 (訳):
+    ``Scheme修行'', オーム社, 2011
+  \item
+    Michael A. Nielsen, Isaac L. Chuang, 木村 達也 (訳):
+    ``量子コンピュータと量子通信 1'', オーム社, 2004
+\end{enumerate}
+
