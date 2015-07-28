@@ -375,7 +375,9 @@ gosh> (times 10 random-walk '(0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0))
   実験してみましょう。
   $\ket{i}$ を観測する確率は、今は、
   $\ket{i,0}$ を観測する確率と
-  $\ket{i,1}$ を観測する確率との和なので、こうなります。
+  $\ket{i,1}$ を観測する確率との和なので、
+  状態から確率それぞれを観測できる確率のリストへ次を使って変換できます。
+  \v{compress}
 \begin{verbatim}
 (define (compress x)
   (if (< (length x) 2)
@@ -415,11 +417,15 @@ gosh> (plot-times 10 random-walk
       (loop (+ i 1) (f x)))))
 \end{verbatim}
 
-\begin{figure}[h!]
-  \begin{center}
+\begin{center}
 \includegraphics[width=1.0\textwidth,bb=0 0 640 480]{img/8.png}
-\caption{8.png}
-  \end{center}
-\end{figure}
+\text{8.png}
+\end{center}
 
+\page{
+  ところで知らない道に出てしまいました。
+  帰り道を覚えていますか。
+}{
+  …。
+}
 
