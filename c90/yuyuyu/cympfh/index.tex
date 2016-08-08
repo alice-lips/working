@@ -63,10 +63,88 @@
 
 \PAUSE
 
-\YUZUKO 喃語。 乳児の発する言葉。 言語を獲得する前段階。
+\YUZUKO 喃語。 乳児の発する言葉。 言語を獲得する前段階
 \YUI さっきの赤ちゃんだ
 \YUKARI わんわんとか？
-\YUZUKO んーと。幼児語。乳幼児の会話に用いられる言葉。
+\YUZUKO んーと。幼児語。乳幼児の会話に用いられる言葉
 \YUKARI ふーん？
 \YUZUKO わんわんとかは幼児語っていうんだって
+\YUZUKO 幼児の言語獲得…
+\YUI あ、これ面白い
+\YUI ブーバ・キキ効果
+\YUI 2つの図形を見せて、どっちがブーバでどっちがキキかを答えさせるっていう有名な心理実験… だってさ
+\YUKARI ブーバー？
+\YUI うーんと、言葉に意味はなくて、音の響きとかから判断するんだって
+\YUZUKO ぶ〜ば〜
+\YUKARI あー、キキの方が痛そう
+\YUZUKO 黒板みたいな？
+\YUKARI あー、確かに
+\YUI ん？ どっちが黒板？
 
+\PAUSE
+
+\YUZUKO E. Mark Gold さん \footnote{参考文献 [1]}
+\YUKARI 誰？
+\YUZUKO 幼児の言語獲得の定式化を試みた人、だってー
+\YUZUKO 幼児は親が話す言葉だけから言語を学習する…
+\YUKARI うーん、それでー？
+\YUZUKO 正しい言葉だけから正しい言語を学習できる
+\YUZUKO これを Learning from positive data 、と言うそうです
+\YUI それっ当たり前じゃない？ 何が難しいんだ？
+\YUKARI うーん、よくわからない
+\YUZUKO 子供は学んだ言葉を使って新しく作文するかもしれない
+\YUZUKO それが正しい言葉であるかどうかを、親の反応から学習する
+\YUZUKO この場合は、「正しくない言葉」も学習できるチャンスがある
+\YUKARI ふーん？
+\YUZUKO あ、こんな例があるよ \footnote{参考文献 [3] の例を改変}
+
+\begin{boxnote}
+Q. 次の $A$ は自然数 ($1, 2, 3, \ldots$) の部分集合です.  $A$ はどんな集合ですか?
+$$A = \{2, 4, 6, 8, \ldots\}$$
+\end{boxnote}
+
+\YUKARI 偶数だね
+\YUI うんうん
+\YUKARI 偶数… じゃないの？
+\YUZUKO とは限りません
+
+\begin{boxnote}
+    A. 答えは偶数または13の倍数からなる集合でした.
+
+    $$A = \mathbb{N}_{2} \cup \mathbb{N}_{13} = \{2, 4, 6, 8, 10, 12, 13, 14, \ldots\}$$
+\end{boxnote}
+
+\YUKARI えー、インチキだよー
+\YUZUKO 最後まで聞かないほうが悪いのです
+\YUI お？ 急になんだ？
+\YUZUKO そうじゃなくってー
+\YUKARI あー、 「$\dots$」ね
+\YUZUKO そう！ 「$\dots$」なのです
+\YUI 有限の情報だけから決めるのは無理、ってことか？
+\YUZUKO 正しくは positive data (または informant) ね
+\YUZUKO これは正しい言葉ですよ、っていう
+\YUKARI 言葉？
+\YUZUKO あ、そう。これは言葉なのです
+
+\begin{boxnote}
+    \begin{itemize}
+        \item
+            一般に無限集合である学習したい対象を Concept という.
+            例えば一つの言語 (日本語とか英語とか) は Concept の一例.
+            例えば自然数の部分集合は Concept の一例.
+        \item
+            ある要素が学習したい Concept に属するという情報を positive data (informant) と呼ぶ.
+            例えば親が話す言葉は positive data.
+            例えば自然数の部分集合 $A$ について $x \in A$ は一つの positive data.
+    \end{itemize}
+\end{boxnote}
+
+\subsection*{参考文献}
+
+本物語は次の参考文献をヒントに創作しました.
+
+\begin{enumerate}
+    \item[$\lbrack 1 \rbrack$] E. M. Gold: ``Language Identification in the Limit'', in \emph{Information and Control 10 (1967)}
+    \item[$\lbrack 2 \rbrack$] Angluin: ``Positive Inference of Formal Languages from Positive Data'', in \emph{Information and Control 45 (1980)}
+    \item[$\lbrack 3 \rbrack$] {Hiroki Arimura, Takeshi Shinohara and Setsuko Otsuki}: ``{Finding Minimal Generalizations for Unions of Pattern Languages and Its Application to Inductive Inference from Positive Data}'', in \emph{In Proc. the 11th STACS, LNCS 775 (1994)}
+\end{enumerate}
