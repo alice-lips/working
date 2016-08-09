@@ -2,23 +2,23 @@
 
 \def\YUZUKO{
 
-    ゆずこ\hspace{4.4mm}}
+    ゆずこ\hspace{3.4mm}}
 \def\YUI{
 
-    唯\hspace{12mm}}
+    唯\hspace{11mm}}
 \def\YUKARI{
 
-    縁\hspace{12mm}}
+    縁\hspace{11mm}}
 
 \def\PAUSE{\hspace{8mm}・・・}
 
 \YUZUKO 電車、久しぶりに乗るね〜
 \YUI あー、そうかもなー
-\YUKARI ねー
 \YUZUKO いつぶりくらいかな
-\YUI あー、いつだろうなあ
-\YUZUKO 去年の海以来？
+\YUKARI 去年の海？
 \YUI いやいや、さすがにもっと乗ってるだろ
+\YUZUKO 電車、あんまり乗らんよね〜
+\YUKARI あんまりね〜
 
 \PAUSE
 
@@ -26,7 +26,7 @@
 \YUKARI うん
 \YUZUKO なんか、さ
 \YUKARI うん？
-\YUZUKO いろんな人がいるんだなーって
+\YUZUKO いろんな人がいるんだなーって。思うよね？
 \YUKARI あー、わかるー
 \YUI …。
 \YUI あんまじろじろ見るなよ
@@ -48,13 +48,13 @@
 \YUKARI でもすごいぐずってたねー
 \YUZUKO ぐずってた！
 \YUI （なんか、ゆずこみたいだった…）
-\YUZUKO （じー）
+\YUZUKO …？
 \YUI なんだよ？
 \YUKARI なんかねー
 \YUZUKO ん？
 \YUKARI 今の赤ちゃん、ゆずちゃんみたいだった
-\YUZUKO へ？
-\YUI うん…。
+\YUZUKO ほへ？
+\YUI あー、うん…
 \YUZUKO えー？ なにそれー？ それ喜んでいいの？
 \YUKARI なんかー、しゃべり方とか？
 \YUI 喋ってたか？
@@ -69,8 +69,8 @@
 \YUZUKO んーと。幼児語。乳幼児の会話に用いられる言葉
 \YUKARI ふーん？
 \YUZUKO わんわんとかは幼児語っていうんだって
-\YUZUKO 幼児の言語獲得…
-\YUI あ、これ面白い
+\YUZUKO 言語の獲得…
+\YUI あ、これテレビで見たことある
 \YUI ブーバ・キキ効果
 \YUI 2つの図形を見せて、どっちがブーバでどっちがキキかを答えさせるっていう有名な心理実験… だってさ
 \YUKARI ブーバー？
@@ -83,7 +83,7 @@
 
 \PAUSE
 
-\YUZUKO E. Mark Gold さん \footnote{参考文献 [1]}
+\YUZUKO E. Mark Gold さん ${}^{[1]}$
 \YUKARI 誰？
 \YUZUKO 幼児の言語獲得の定式化を試みた人、だってー
 \YUZUKO 幼児は親が話す言葉だけから言語を学習する…
@@ -116,7 +116,7 @@ $$A = \{2, 4, 6, 8, \ldots\}$$
 \YUZUKO とは限りません
 
 \begin{boxnote}
-    A. 答えは偶数または13の倍数からなる集合でした.
+    A. $A$ は偶数または13の倍数からなる集合.
 
     $$A = \mathbb{N}_{2} \cup \mathbb{N}_{13} = \{2, 4, 6, 8, 10, 12, 13, 14, \ldots\}$$
 \end{boxnote}
@@ -160,24 +160,182 @@ $$A = \{2, 4, 6, 8, \ldots\}$$
 \YUI ほーん？
 
 \begin{boxnote}
-    次のような状況を、極限同定、と呼びます.
+    次のような学習の仕方を「極限同定」と呼びます.
     \begin{itemize}
         \item
-            ある Concept をこれから学ぼうとする学習者がいます
+            ある Concept をこれから学ぼうとする学習者がいます.
         \item
-            学習者は一つの positive data (informant) を得ます
+            学習者は一つの positive data (informant) を得ます. \footnote{この情報の得方を正提示 (positive presentation) と言いますが、厳密にはもっと強い制約があります. それは Concept の任意の要素はいつかは必ず提示される、というものです.}
         \item
-            学習者はそれまでに得た positive data (informant) から、一つ、考えつく Concept を推論します
+            学習者はそれまでに得た positive data (informant) から、一つ、考えつく Concept を推論します.
+        \item
+            上の、positive data を受け取って一つの Concept を推論することを一つのステップとして、これを繰り返します
+    \end{itemize}
+    次のようなとき、「極限同定は成功した」と言います.
+    \begin{itemize}
+        \item
+            あるステップで真の Concept を推論し、かつ、
+        \item
+            以降のステップでは、常にその Concept を推論する.
     \end{itemize}
 \end{boxnote}
 
+\YUKARI じゃあさっきの例で言うとー
+\YUI うん
+\YUKARI $2, 4, 6, 8, \ldots$ ってのが正提示でー
+\YUI うんうん
+\YUKARI 数字一つを受け取る度に、集合を答えるのが、Concept の推論、ってことー？
+\YUZUKO そうそう
+\YUZUKO ちなみに、推論した Concept の列を「推論列 (guessing sequence) 」っていうよ
+
+\begin{boxnote}
+    正提示 $2, 4, 6, 8, \ldots$ に対して、推論列 $A_1, A_2, A_3, A_4, \ldots$.
+\[
+    \begin{array}{ccccc}
+        2, & 4, & 6, & 8, & \ldots \\
+        \downarrow & \downarrow & \downarrow & \downarrow & \\
+        A_1, & A_2, & A_3, & A_4, & \ldots
+    \end{array}
+\]
+\end{boxnote}
+
+\YUZUKO こは小さい順に数字を並べてるように見えるけど、順序はどうでもいいし、重複してもいいんだって
+\YUKARI $2, 10, 2, 10, \ldots$ みたいな？
+\YUZUKO うん。でもこの注釈があるからね。いつかは 13 の倍数も出現するわけさ
+\YUI 時刻 $t$ の推論を $A_t$ って書いたの？
+\YUZUKO そうっす
+\YUI じゃあさっきの「極限同定の成功」ってのは $\lim_{t \rightarrow \infty} A_t = A$ って書いていいのかな
+\YUZUKO うん。まあ、文字通り形式化すると $\exists T, \forall t > T, A_t = A$ だけどね
+\YUZUKO ともかく、この方法で「極限同定が成功」したとき、その学習者は、言語、あ、 Cencept ね。Concept を学習したって見做すらしいのさ
+
+\PAUSE
+
+\YUKARI それで？
+\YUZUKO うん？
+\YUKARI これで、日本語が学習できるの？
+\YUZUKO うーん、、、どうなんだろう？
+\YUKARI えー
+\YUI ちょっとゆずこさーん
+\YUZUKO むーん。。。
+
+\PAUSE
+
+\YUZUKO あ！
+\YUI なになに
+\YUZUKO "文脈自由文法の学習は不可能である" ${}^{[1]}$ \footnote{英語は文脈自由文法であると言われる. いや、少なくとも反証はされていない.}
+\YUKARI えーなんでー？
+\YUI 学習の方法も決めてないのに…？
+\YUZUKO そのための定式化ですよ
+\YUZUKO TABLE 1 に書いてるのだとー…。 へー！
+\YUI なになに？
+\YUZUKO 文脈自由文法も文脈依存文法も、正規言語も、positive data からの極限同定は不可能、らしいよ
+\YUKARI だからなんでー？
+\YUZUKO むーん。。
+\YUZUKO どこに書いてあるんだろう？？
+
+\PAUSE
+
+\YUZUKO あ、あったあった
+\YUZUKO "super-finite class of languages"
+\YUKARI クラス？
+\YUZUKO うん、言語族、のことかな？
+\YUI そんなの今まで話に出てこなかったぞ
+\YUZUKO ごめんごめん。説明がめんどそうだったから…
+\YUZUKO 「自然数の部分集合」とか「自然言語」みたいに、推論するConcept を中から選べるための枠組みみたい
+\YUKARI え？ じゃあ、推論って、選択のこと？
+\YUI なんか急に問題が簡単に見えてきたなあ
+
+\begin{boxnote}
+    列挙による推論.
+
+    Cencept のクラスが添字つき集合 \footnote{集合の要素をもれなく列として並べられるということ} の場合、列挙による推論がありえる.
+    Concept を実際に並べる.
+    $$\mathcal{C} = \{ C_1, C_2, C_3, \ldots \}$$
+    次のような方法で推論を行う.
+    \begin{itemize}
+        \item
+            添字 $i=1$ を持っておく.
+        \item
+            positive data (informant) を受け取る.
+        \item
+            それまでに受け取った positive data と $C_i$ とが矛盾するか調べる.
+        \item
+            矛盾するなら、添字 $i$ を 1 増やす.
+            矛盾しないなら何もしない.
+        \item
+            推論として $C_i$ を推論する.
+    \end{itemize}
+\end{boxnote}
+
+\YUKARI さっきの自然数のは？ これで解ける？
+\YUI いやいや、無理だろ
+\YUKARI どうして？
+\YUI 自然数の部分集合全体は可算じゃないから
+\YUKARI そっかー
+\YUZUKO もっと単純なやつじゃないと、これはダメみたいだね
+\YUKARI なんならいいんだろう
+\YUI 「ある数の倍数」とかじゃないか？
+\YUKARI それなら可算だー
+
+\begin{boxnote}
+    自然数 $n$ の倍数全体を $\mathbb{Z}_n$ と書く.
+    Concept class, $\mathcal{C} = \{ \mathbb{Z}_n : n \in \mathbb{N} \}$ は列挙による方法で正提示から極限同定可能?
+\end{boxnote}
+
+\YUZUKO うーん…
+\YUZUKO いや、おかしいよ！
+\YUKARI えー、なんでー？
+\YUZUKO だってほら、4の倍数だとするじゃん？
+\YUZUKO 4, 8, 16, \ldots ってきて、
+\YUZUKO ほら、2 の倍数の可能性を捨てきれないわけじゃん
+\YUI あっ
+\YUZUKO でしょ？
+\YUI 添字の順序を工夫すれば… うーん… わからんなあ…
+\YUKARI どゆこと？
+\YUI ほら、$\mathbb{Z}_1, \mathbb{Z}_2$ って順に見てくとするだろ？
+\YUI そしたら、正提示はずっと2の倍数だから、添字が 2 で停まるわけよ
+\YUKARI あーそっかー
+\YUI $\mathbb{Z}_4$ を $\mathbb{Z}_2$ の前に持ってくればいいんだけど、そしたらキリがないし
+\YUKARI あーでも、ちょっとズルをしたら上手くいくかも
+\YUI どんな？
+\YUKARI 最初のpositive data の数だけ先に見ちゃってー、
+\YUKARI 例えばそれが $m$ だったら、
+$$\mathbb{Z}_{m}, \mathbb{Z}_{m-1}, \mathbb{Z}_{m-2}, \ldots, \mathbb{Z}_{2}, \mathbb{Z}_{1}$$
+\YUKARI って並べるの
+\YUI あー、それなら上手くいくなー
+\YUI 上限を決めて、降りるように並べるわけだな
+\YUZUKO ていうか
+\YUZUKO これって、提示される数の最小値を取ればいいだけだね、これ \footnote{極小言語 (minimal language; MINL) 戦略の自然数バージョンです}
+\YUKARI あー、確かに
+\YUI 整数だから、絶対値は取らないとだけどな
+
+
+\begin{boxnote}
+    自然数 $n$ の倍数全体を $\mathbb{Z}_n$ と書く.
+    Concept class, $\mathcal{C} = \{ \mathbb{Z}_n : n \in \mathbb{N} \}$ は次のような方法によって正提示から極限同定可能.
+
+    \begin{itemize}
+        \item 数 $m = \infty$ を持つ
+        \item positive data (informant) $m_t$ を受け取る
+        \item $m$ を $m$ と $|m_t|$ の最小値とする ($m \leftarrow \min \{ m, |m_t| \}$) \footnote{$|\cdot|$ は絶対値}
+        \item $Z_m$ を推論
+    \end{itemize}
+\end{boxnote}
+
+\PAUSE
+
+\YUKARI でもなんか、
+\YUKARI 言葉っぽくないね？
+\YUI あ、ていうか、文脈自由文法は？ "super-finite" は？
 
 \subsection*{参考文献}
 
 本物語は次の参考文献をヒントに創作しました.
 
 \begin{enumerate}
-    \item[$\lbrack 1 \rbrack$] E. M. Gold: ``Language Identification in the Limit'', in \emph{Information and Control 10 (1967)}
+    \item[$\lbrack 1 \rbrack$] E. Mark Gold: ``Language Identification in the Limit'', in \emph{Information and Control 10 (1967)}
     \item[$\lbrack 2 \rbrack$] Angluin: ``Positive Inference of Formal Languages from Positive Data'', in \emph{Information and Control 45 (1980)}
     \item[$\lbrack 3 \rbrack$] {Hiroki Arimura, Takeshi Shinohara and Setsuko Otsuki}: ``{Finding Minimal Generalizations for Unions of Pattern Languages and Its Application to Inductive Inference from Positive Data}'', in \emph{In Proc. the 11th STACS, LNCS 775 (1994)}
+    \item[$\lbrack 4 \rbrack$] {\rm @cympfh}: ``言語の極限同定みたいな話'',\\
+        \url{http://cympfh.cc/study/language-identification/history/it.pdf}
 \end{enumerate}
