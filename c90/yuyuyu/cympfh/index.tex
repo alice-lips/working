@@ -10,7 +10,7 @@
 
     縁\hspace{11mm}}
 
-\def\PAUSE{\hspace{8mm}・・・}
+\def\PAUSE{\vspace{8mm}}
 
 \YUZUKO 電車、久しぶりに乗るね〜
 \YUI あー、そうかもなー
@@ -88,7 +88,7 @@
 \YUKARI 誰？
 \YUZUKO 幼児の言語獲得の定式化を試みた人、だってー
 \YUZUKO 幼児は親が話す言葉だけから言語を学習する…
-\YUKARI うーん、それでー？
+\YUI そうだな？
 \YUZUKO 正しい言葉だけから正しい言語を学習できる
 \YUZUKO これを Learning from positive data 、と言うそうです
 \YUI それっ当たり前じゃない？ 何が難しいんだ？
@@ -100,26 +100,25 @@
 \YUZUKO あ、こんな例があるよ \footnote{参考文献 [3] の例を改変}
 
 \begin{boxnote}
-Q. 次の $A$ は自然数 ($1, 2, 3, \ldots$) の部分集合です.  $A$ はどんな集合ですか?
-$$A = \{2, 4, 6, 8, \ldots\}$$
+    {\rm Q.} 次の $A$ は自然数 ($1, 2, 3, \ldots$) からなる集合です.  $A$ はどんな集合ですか?
+$$A = \{2, 4, 6, 8, 10, \ldots\}$$
 \end{boxnote}
 
-\YUI 偶数、だろ？
+\YUI ふーん？
+\YUI いやいやいや、偶数だろ？
 \YUKARI うんうん
 
 \begin{boxnote}
-    A. $A$ は偶数全体.
-
-    $$A = \mathbb{N}_{2} = \{2, 4, 6, 8, 10, 12, \ldots\}$$
+    {\rm A.} $A$ は偶数全体.
+    $$A = \{2, 4, 6, 8, 10, 12, 14, \ldots\}$$
 \end{boxnote}
 
 \YUZUKO ざんね〜ん
 \YUZUKO とは限りません
 
 \begin{boxnote}
-    A. $A$ は偶数または13の倍数からなる集合.
-
-    $$A = \mathbb{N}_{2} \cup \mathbb{N}_{13} = \{2, 4, 6, 8, 10, 12, 13, 14, \ldots\}$$
+    {\rm A.} $A$ は偶数または13の倍数からなる集合.
+    $$A = \{2, 4, 6, 8, 10, 12, {\bf 13}, 14, \ldots\}$$
 \end{boxnote}
 
 \YUKARI えー、インチキだよー
@@ -128,50 +127,56 @@ $$A = \{2, 4, 6, 8, \ldots\}$$
 \YUZUKO そうじゃなくってー
 \YUKARI あー、 「$\dots$」ね
 \YUZUKO そう！ 「$\dots$」なのです
-\YUI 有限の情報だけから決めるのは無理、ってことか？
-\YUZUKO 正しくは positive data (または informant) ね
-\YUZUKO これは正しい言葉ですよ、っていう
-\YUKARI 言葉？
-\YUZUKO あ、そう。これは言葉なのです
+\YUI ふーん？ 「聞く」ってなんだ？
+\YUZUKO ゆかりちゃん、やってみて
+\YUKARI ええっと
+\YUKARI 「12 は $A$ ですか？」
+\YUZUKO はい。そーです。
+\YUKARI 「14 は $A$ ですか？」
+\YUZUKO はいっ。そーですっ
+\YUI それだとやっぱり偶数じゃないか。 2の倍数以外も聞かないと
+\YUI 13は？ って聞いて、、、
+\YUZUKO 13 も $A$ だ、って答えるよ
+\YUI でもそれでも、有限の質問だけから決めるのは無理じゃないか？？
+\YUI 全部の数について聞かないと、、、
+\YUZUKO 「これは $A$ に含まれる」っていうのを ``informant'' っていうらしいよ
+\YUKARI 「含まれない」ってのは？
+\YUZUKO うーん。「含まれる」ってのを informant または positive data と呼ぶ、って書いてあるけど…
 
 \begin{boxnote}
     \begin{itemize}
         \item
-            一般に (有限とは限らない) 集合で、学習したい対象のことを Concept という.
+            (有限とは限らない) 集合で、学習したい対象のことを Concept という.
             例えば一つの言語 (日本語とか英語とか) は Concept の一例.
             例えば自然数の部分集合は Concept の一例.
         \item
-            ある要素が学習したい Concept に属するという情報を positive data (informant) と呼ぶ.
-            例えば親が話す言葉は positive data.
-            例えば自然数の部分集合 $A$ について $x \in A$ は一つの positive data.
+            ある要素が学習したい Concept に属するという情報を informant (正データ, positive data とも) と呼ぶ.
+            例えば親が話す言葉は informant.
+            例えば自然数の部分集合 $A$ について $x \in A$ は一つの informant.
     \end{itemize}
 \end{boxnote}
 
-\YUI ってことは集合 $A$ が言語ってことか…？
-\YUKARI 自然数が言葉でー？
+\YUI ってことは、さっきの自然数の集合が言語にあたるのか…？
+\YUKARI 自然数が言葉ー？
 
 \PAUSE
 
-\YUI でも、そんなの無理だろ？
-\YUZUKO ？
-\YUI 有限個の情報、あ、informant か？ しかくれなかったんだから
-\YUI そこから、そんな、「または13の倍数」なんて分かるわけないだろ？
-\YUKARI うんうん
 \YUZUKO そこで、「極限同定」という発想が生まれるわけです
-\YUI ほーん？
+\YUI うん？
 
 \begin{boxnote}
-    次のような学習の仕方を「極限同定」と呼びます.
+    次のような Concept (言語) の学習の枠組みを「極限同定」と呼びます.
     \begin{itemize}
         \setlength{\itemsep}{-1mm}
         \item
             ある Concept をこれから学ぼうとする学習者がいます.
         \item
-            学習者は一つの positive data (informant) を得ます. \footnote{この情報の得方を正提示 (positive presentation) と言いますが、厳密にはもっと強い制約があります. それは Concept の任意の要素はいつかは必ず提示される、というものです.}
+            学習者は一つの informant を得ます. 「これは学習すべきConcept に含まれる」という情報であって、「含まれない」という情報は得られないことに註意してください.
         \item
-            学習者はそれまでに得た positive data (informant) から、一つ、考えつく Concept を推論します.
+            学習者はそれまでに得た informant を用いて、1つ Concept を推論します.
+            それが学習者の学習結果です.
         \item
-            上の、positive data を受け取って一つの Concept を推論することを一つのステップとして、これを繰り返します
+            以上を1つのステップとして、これを何度も繰り返します. \footnote{この情報の得方を正提示 (positive presentation) と言いますが、厳密にはもっと強い制約があります. それは Concept の任意の要素はいつかは必ず informant として提示される、というものです.}
     \end{itemize}
 
     更に次のようなとき、極限同定が「成功した」と言います.
@@ -184,40 +189,35 @@ $$A = \{2, 4, 6, 8, \ldots\}$$
     \end{itemize}
 \end{boxnote}
 
-\YUKARI じゃあさっきの例で言うとー
-\YUI うん
-\YUKARI $2, 4, 6, 8, \ldots$ ってのが正提示でー
+\YUKARI じゃあさっきの例で言うと、
+\YUKARI $2, 4, 6, 8, 10, \ldots$ ってのが正提示でー
 \YUI うんうん
-\YUKARI 数字一つを受け取るごとに、
-\YUI positive data な
-\YUKARI 集合を答えるのが、Concept の推論、ってことー？
-\YUZUKO そうそう
+\YUKARI 数字一つを受け取るごとに、自然数の部分集合を一つ答える
+\YUI 推論な
 \YUZUKO ちなみに、推論した Concept の列を「推論列 (guessing sequence) 」っていうよ
 
 \begin{boxnote}
-    正提示 $2, 4, 6, 8, \ldots$ に対して、推論列 $A_1, A_2, A_3, A_4, \ldots$.
+    正提示 $2, 4, 6, 8, 10, \ldots$ に対して、推論列 $A_1, A_2, A_3, A_4, A_5, \ldots$.
 \[
-    \begin{array}{ccccc}
-        2, & 4, & 6, & 8, & \ldots \\
-        \downarrow & \downarrow & \downarrow & \downarrow & \\
-        A_1, & A_2, & A_3, & A_4, & \ldots
+    \begin{array}{cccccc}
+        2, & 4, & 6, & 8, & 10, & \ldots \\
+        \downarrow & \downarrow & \downarrow & \downarrow & \downarrow & \\
+        A_1, & A_2, & A_3, & A_4, & A_5, & \ldots
     \end{array}
 \]
 \end{boxnote}
 
-\YUZUKO あ、これは小さい順に数字を並べてるけど、別にそれに意味はなくて
-\YUZUKO 順序はどうでもいいし、それに重複してもいいんだって
-\YUKARI $2, 10, 2, 10, \ldots$ みたいに？
-\YUZUKO うん。でもこの注釈があって
-\YUZUKO いつかは 13 の倍数も出現しないといけないわけ
-\YUI 時刻 $t$ の推論を $A_t$ って書いたの？
+\YUZUKO あ、ちなみにこの正提示は、小さい順に並べてるけど、
+\YUZUKO 別にそれに意味はなくて、順序はどうでもいいし、それに重複してもいいんだって
+\YUKARI $2, 10, 2, 10, 8, \ldots$ みたいに？
 \YUZUKO そうっす
-\YUI じゃあさっきの「極限同定の成功」ってのは
-$$\lim_{t \rightarrow \infty} A_t = A$$
+\YUI 時刻 $t$ の推論を $A_t$ って書いたんだな
+\YUI じゃあさっきの「極限同定の成功」の条件は
+$$\lim_{t \rightarrow \infty} A_t = A$$\vspace{-6mm}
 \YUI って書いていいのか？
 \YUZUKO うーん、いいんじゃないかな
-\YUZUKO 文字通り形式化すると $\exists T, \forall t > T, A_t = A$ だけどね
-\YUZUKO 「極限同定が成功」したとき、Concept を学習したって見做すらしいのさ
+\YUZUKO 文字通り形式化すると $\exists T, \forall t > T, A_t = A$ だけど
+\YUZUKO 極限同定が成功したとき、Concept を学習したって見做すらしいよ
 
 \PAUSE
 
@@ -255,7 +255,7 @@ $$\lim_{t \rightarrow \infty} A_t = A$$
 \YUI なんか急に問題が簡単に見えてきたなあ
 
 \begin{boxnote}
-    列挙による推論.
+    {\bf 列挙による推論}
 
     Cencept のクラスが添字つき集合 \footnote{集合の要素をもれなく列として並べられるということ} の場合、列挙による推論がありえる. この方法ではまず Concept を列に並べる.
     $$\mathcal{C} = \{ C_1, C_2, C_3, \ldots \}$$
@@ -265,14 +265,14 @@ $$\lim_{t \rightarrow \infty} A_t = A$$
         \item
             添字 $i=1$ を持っておく.
         \item
-            positive data (informant) を受け取る.
+            一つの informant を受け取る.
         \item
-            それまでに受け取った positive data と $C_i$ とが矛盾するか調べる.
+            過去に受け取った informant のどれかと $C_i$ とが矛盾するか調べる.
         \item
-            矛盾するなら、添字 $i$ を 1 増やす.
+            どれかと矛盾するなら、$C_i$ は正しい Concept ではないので、添字 $i$ を 1 増やす.
             矛盾しないなら何もしない.
         \item
-            推論として $C_i$ を推論する.
+            推論として $C_i$ を答える.
     \end{itemize}
 \end{boxnote}
 
@@ -281,104 +281,104 @@ $$\lim_{t \rightarrow \infty} A_t = A$$
 \YUKARI どうして？
 \YUI 自然数の部分集合全体は可算じゃないから
 \YUKARI そっかー
+\YUI この方法で推論するには「あり得る言語が多すぎる」ってわけだな
 \YUZUKO もっと単純なやつじゃないと、これはダメみたいだね
-\YUKARI なんならいいんだろう
-\YUI 「ある数の倍数」とかじゃないか？
-\YUKARI それなら可算だー
+\YUKARI なにならいいんだろう
+\YUI 「ある数の倍数」とかどうだ？
+\YUKARI それなら可算だね
 
 \begin{boxnote}
+    {\bf 倍数全体という Concept クラス}
+
     自然数 $n$ の倍数全体を $\mathbb{Z}_n$ と書く.
-    Concept class, $\mathcal{C} = \{ \mathbb{Z}_n : n \in \mathbb{N} \}$ は列挙による方法で正提示から極限同定可能?
+    $\mathcal{C} = \{ \mathbb{Z}_n : n \in \mathbb{N} \}$ は列挙による方法で正提示から極限同定可能?
 \end{boxnote}
 
 \YUZUKO うーん…
-\YUZUKO いや、おかしいよ！
+\YUI いや、無理だな
 \YUKARI えー、なんでー？
-\YUZUKO だってほら、4の倍数だとするじゃん？
-\YUZUKO 4, 8, 16, \ldots ってきて、
+\YUI だってほら、答えを 「4の倍数」だとするだろ
+\YUI 正提示としては 4, 8, 16 って感じで、4の倍数だけが来るけど、
+\YUI 4の倍数って2の倍数でもあるだろ？
+\YUKARI つまり？
 \YUZUKO ほら、2 の倍数の可能性を捨てきれないわけじゃん
-\YUI あっ
-\YUZUKO でしょ？
-\YUI 添字の順序を工夫すれば… うーん… わからんなあ…
-\YUKARI どゆこと？
-\YUI ほら、$\mathbb{Z}_1, \mathbb{Z}_2$ って順に見てくとするだろ？
-\YUI そしたら、正提示はずっと2の倍数だから、添字が 2 で停まるわけよ
-\YUKARI あーそっかー
+\YUI 単純に、$\mathcal{C} = \{ \mathbb{Z}_1, \mathbb{Z}_2, \ldots \}$ って並べてたら、$i=2$ で停まっちゃう
+\YUZUKO 添字の順序を工夫すれば… うーん…
 \YUI $\mathbb{Z}_4$ を $\mathbb{Z}_2$ の前に持ってくればいいんだけど、そしたらキリがないし
 \YUKARI あーでも、ちょっとズルをしたら上手くいくかも
 \YUI どんな？
-\YUKARI 最初のpositive data の数だけ先に見ちゃってー、
-\YUKARI 例えばそれが $m$ だったら、
-$$\mathbb{Z}_{m}, \mathbb{Z}_{m-1}, \mathbb{Z}_{m-2}, \ldots, \mathbb{Z}_{2}, \mathbb{Z}_{1}$$
+\YUKARI あのねー、正提示の一番最初だけ先に見ちゃうの
+\YUKARI で、それが $m$ だったら、
+$$\mathbb{Z}_{m}, \mathbb{Z}_{m-1}, \ldots, \mathbb{Z}_{2}, \mathbb{Z}_{1}$$\vspace{-6mm}
 \YUKARI って並べるの
 \YUI あー、それなら上手くいくなー
-\YUI 上限を決めて、降りるように並べるわけだな
-\YUZUKO ていうか
-\YUZUKO これって、提示される数の最小値を取ればいいだけだね、これ \footnote{極小言語 (minimal language; MINL) 戦略の自然数バージョンです}
+\YUI 上限を見つけて、そこから降りてくわけだな
+\YUZUKO あ、ていうか！
+\YUZUKO これって、提示される数の最小値を取ればいいだけだね
 \YUKARI あー、確かに
-\YUI 整数だから、絶対値は取らないとだけどな
-
+\YUI 提示される数は整数だから、絶対値は取らないとだけどな
 
 \begin{boxnote}
     自然数 $n$ の倍数全体を $\mathbb{Z}_n$ と書く.
-    Concept class, $\mathcal{C} = \{ \mathbb{Z}_n : n \in \mathbb{N} \}$ は次のような方法によって正提示から極限同定可能.
-
+    Concept class, $\mathcal{C} = \{ \mathbb{Z}_n : n \in \mathbb{N} \}$ は次のような方法によって正提示から極限同定可能.  \footnote{これは正しく、極小言語 (minimal language; MINL) 戦略の自然数バージョン}
     \begin{itemize}
-        \setlength{\itemsep}{0mm}
+        \setlength{\itemsep}{-1mm}
         \item 数 $m = \infty$ を持つ
-        \item positive data (informant) $m_t$ を受け取る
-        \item $m$ を $m$ と $|m_t|$ の最小値とする ($m \leftarrow \min \{ m, |m_t| \}$) \footnote{$|\cdot|$ は絶対値}
+        \item informant $m_t$ を受け取る
+        \item $m$ より $|m_t|$ の方が小さい時、$m$ を $|m_t|$ で上書きする
         \item $Z_m$ を推論
     \end{itemize}
 \end{boxnote}
 
-\YUKARI でもなんか、
-\YUKARI 言葉っぽくないね？
+\PAUSE
+
+\YUKARI それはいいんだけどー
+\YUKARI 赤ちゃんは？ 言語はー？
 \YUI あ、ていうか、文脈自由文法は？ "super-finite" は？
-\YUZUKO あ、そうだったそうだった。忘れてた
+\YUZUKO あ、そうだったそうだった。忘れてました
 
 \PAUSE
 
 \YUI 正提示から学習できる言語。パターン言語 ${}^{[2]}$
 \YUZUKO お？
-\YUI ンンン？？ $\Sigma A$ …？
+\YUI んんん？？ $\Sigma A$ …？
 \YUZUKO どれどれ
 \YUI んー。パターン言語の定義らしいんだけど…
 \YUZUKO ああ、たぶんこれ、Kleene閉包だよ
 \YUI こんなヘンな記法が…
 
 \begin{boxnote}
-    非形式的にパターン言語を説明します.
-    パターン言語とはあるパターンによって「説明される」言語です.
-    そしてここで言うパターンとは、要は、「空欄のある文」です.
-    
+    非形式的に「パターン」を説明します.
+    日常会話で用いるいわゆる「パターン」とは違う意味で使うので註意して下さい.
+    ここで言うパターンとは、要は、「空欄のある文」です.
     \begin{itemize}
         \item 例. ``世界が \fbox{　　} でありますように''
     \end{itemize}
-
     また空欄には「名前」をつけることができます.
-
     \begin{itemize}
         \item 例. ``\fbox{ (x) } が \fbox{ (x) } を \fbox{ (y) } てました''
     \end{itemize}
+\end{boxnote}
 
-    そして、このパターンが「説明する」言語とは、空欄を自由に埋めて出来る文からなる集合のことです.
-    ただし、同じ名前の空欄には同じものを埋めます.
+\begin{boxnote}
+    非形式的に 「パターン言語」 を説明します.
+    パターン言語とはある1つのパターンによって「説明される」言語です.
 
+    先ほど例に挙げたパターン ``\fbox{ (x) } が \fbox{ (x) } を \fbox{ (y) } てました'' を再び用います.
+    このパターンが「説明する」言語とは、空欄を自由に埋めて出来る文からなる集合のことです.
+    ただし、同じ名前の空欄には同じもので埋めなければいけません.
     \begin{itemize}
         \setlength{\itemsep}{0mm}
-        \item ``私が私を見つめてました''
-        \item ``深淵が深淵を覗いてました''
-        \item 等々
+        \item ``\fbox{ 私 } が \fbox{ 私 } を \fbox{ 見つめ } てました''
+        \item ``\fbox{深淵} が \fbox{深淵} を \fbox{ 覗いて } ました''
     \end{itemize}
 \end{boxnote}
 
-\YUKARI あー、なんか、言語って感じ
-\YUI うーん、そうかー？
-\YUI 同じ名前の空欄って、同じものが何度も出現するってことだろ？
+\YUKARI 急に日本語だー
+\YUI 同じ名前の空欄があるって、同じものが何度も出現するってことだろ？
 \YUI あんまり自然言語にそういうのって出てこないような
-\YUZUKO 同じ名前の空欄が出てこないものは、正則パターン言語、と言うそうです
-\YUKARI あ、これってもしかして、深さが 1 しかない文脈自由文法？
+\YUKARI 同じ名前の空欄が出てこないものは、正則パターン言語、と言うそうです
+\YUZUKO あ、これってもしかして、深さが 1 しかない文脈自由文法？
 \YUI あー、なるほど
 \YUI ん？
 
