@@ -1,6 +1,8 @@
-do:
+main.pdf:
 	platex main.tex
 	dvipdfmx main
+
+book.pdf:
 	pdftk main.pdf cat output book.pdf
 
 clean:
