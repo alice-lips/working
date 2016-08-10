@@ -72,11 +72,12 @@
 \YUZUKO 言語の獲得…
 \YUI あ、これテレビで見たことある
 \YUI ブーバ・キキ効果
-\YUI 2つの図形を見せて、どっちがブーバでどっちがキキかを答えさせるっていう有名な心理実験… だってさ
+\YUI 2つの図形を見せて、
+\YUI どっちがブーバで、どっちがキキかを答えさせるという心理実験
 \YUKARI ブーバー？
 \YUI うーんと、言葉に意味はなくて、音の響きとかから判断するんだって
 \YUZUKO ぶ〜ば〜
-\YUKARI あー、キキの方が痛そう
+\YUKARI なんかー、キキの方が痛そうな感じする
 \YUZUKO 黒板みたいな？
 \YUKARI あー、確かに
 \YUI ん？ どっちが黒板？
@@ -162,6 +163,7 @@ $$A = \{2, 4, 6, 8, \ldots\}$$
 \begin{boxnote}
     次のような学習の仕方を「極限同定」と呼びます.
     \begin{itemize}
+        \setlength{\itemsep}{-1mm}
         \item
             ある Concept をこれから学ぼうとする学習者がいます.
         \item
@@ -171,8 +173,10 @@ $$A = \{2, 4, 6, 8, \ldots\}$$
         \item
             上の、positive data を受け取って一つの Concept を推論することを一つのステップとして、これを繰り返します
     \end{itemize}
-    次のようなとき、「極限同定は成功した」と言います.
+
+    更に次のようなとき、極限同定が「成功した」と言います.
     \begin{itemize}
+        \setlength{\itemsep}{-1mm}
         \item
             あるステップで真の Concept を推論し、かつ、
         \item
@@ -184,7 +188,9 @@ $$A = \{2, 4, 6, 8, \ldots\}$$
 \YUI うん
 \YUKARI $2, 4, 6, 8, \ldots$ ってのが正提示でー
 \YUI うんうん
-\YUKARI 数字一つを受け取る度に、集合を答えるのが、Concept の推論、ってことー？
+\YUKARI 数字一つを受け取るごとに、
+\YUI positive data な
+\YUKARI 集合を答えるのが、Concept の推論、ってことー？
 \YUZUKO そうそう
 \YUZUKO ちなみに、推論した Concept の列を「推論列 (guessing sequence) 」っていうよ
 
@@ -199,23 +205,28 @@ $$A = \{2, 4, 6, 8, \ldots\}$$
 \]
 \end{boxnote}
 
-\YUZUKO こは小さい順に数字を並べてるように見えるけど、順序はどうでもいいし、重複してもいいんだって
-\YUKARI $2, 10, 2, 10, \ldots$ みたいな？
-\YUZUKO うん。でもこの注釈があるからね。いつかは 13 の倍数も出現するわけさ
+\YUZUKO あ、これは小さい順に数字を並べてるけど、別にそれに意味はなくて
+\YUZUKO 順序はどうでもいいし、それに重複してもいいんだって
+\YUKARI $2, 10, 2, 10, \ldots$ みたいに？
+\YUZUKO うん。でもこの注釈があって
+\YUZUKO いつかは 13 の倍数も出現しないといけないわけ
 \YUI 時刻 $t$ の推論を $A_t$ って書いたの？
 \YUZUKO そうっす
-\YUI じゃあさっきの「極限同定の成功」ってのは $\lim_{t \rightarrow \infty} A_t = A$ って書いていいのかな
-\YUZUKO うん。まあ、文字通り形式化すると $\exists T, \forall t > T, A_t = A$ だけどね
-\YUZUKO ともかく、この方法で「極限同定が成功」したとき、その学習者は、言語、あ、 Cencept ね。Concept を学習したって見做すらしいのさ
+\YUI じゃあさっきの「極限同定の成功」ってのは
+$$\lim_{t \rightarrow \infty} A_t = A$$
+\YUI って書いていいのか？
+\YUZUKO うーん、いいんじゃないかな
+\YUZUKO 文字通り形式化すると $\exists T, \forall t > T, A_t = A$ だけどね
+\YUZUKO 「極限同定が成功」したとき、Concept を学習したって見做すらしいのさ
 
 \PAUSE
 
 \YUKARI それで？
 \YUZUKO うん？
-\YUKARI これで、日本語が学習できるの？
+\YUKARI これで、人間の言葉が学習できるの？
 \YUZUKO うーん、、、どうなんだろう？
 \YUKARI えー
-\YUI ちょっとゆずこさーん
+\YUI どうなんすか？ ゆずこさーん
 \YUZUKO むーん。。。
 
 \PAUSE
@@ -224,14 +235,12 @@ $$A = \{2, 4, 6, 8, \ldots\}$$
 \YUI なになに
 \YUZUKO "文脈自由文法の学習は不可能である" ${}^{[1]}$ \footnote{英語は文脈自由文法であると言われる. いや、少なくとも反証はされていない.}
 \YUKARI えーなんでー？
-\YUI 学習の方法も決めてないのに…？
-\YUZUKO そのための定式化ですよ
-\YUZUKO TABLE 1 に書いてるのだとー…。 へー！
+\YUI 推論の具体的な方法も決めてないのに
+\YUZUKO TABLE 1 に書いてるのだとー…
 \YUI なになに？
-\YUZUKO 文脈自由文法も文脈依存文法も、正規言語も、positive data からの極限同定は不可能、らしいよ
+\YUZUKO 文脈自由文法も文脈依存文法も正規言語も、正提示からの極限同定は不可能
 \YUKARI だからなんでー？
-\YUZUKO むーん。。
-\YUZUKO どこに書いてあるんだろう？？
+\YUZUKO うーん、詳しい記述はどこにあるんだろう
 
 \PAUSE
 
@@ -248,11 +257,11 @@ $$A = \{2, 4, 6, 8, \ldots\}$$
 \begin{boxnote}
     列挙による推論.
 
-    Cencept のクラスが添字つき集合 \footnote{集合の要素をもれなく列として並べられるということ} の場合、列挙による推論がありえる.
-    Concept を実際に並べる.
+    Cencept のクラスが添字つき集合 \footnote{集合の要素をもれなく列として並べられるということ} の場合、列挙による推論がありえる. この方法ではまず Concept を列に並べる.
     $$\mathcal{C} = \{ C_1, C_2, C_3, \ldots \}$$
     次のような方法で推論を行う.
     \begin{itemize}
+        \setlength{\itemsep}{0mm}
         \item
             添字 $i=1$ を持っておく.
         \item
@@ -315,6 +324,7 @@ $$\mathbb{Z}_{m}, \mathbb{Z}_{m-1}, \mathbb{Z}_{m-2}, \ldots, \mathbb{Z}_{2}, \m
     Concept class, $\mathcal{C} = \{ \mathbb{Z}_n : n \in \mathbb{N} \}$ は次のような方法によって正提示から極限同定可能.
 
     \begin{itemize}
+        \setlength{\itemsep}{0mm}
         \item 数 $m = \infty$ を持つ
         \item positive data (informant) $m_t$ を受け取る
         \item $m$ を $m$ と $|m_t|$ の最小値とする ($m \leftarrow \min \{ m, |m_t| \}$) \footnote{$|\cdot|$ は絶対値}
@@ -322,11 +332,55 @@ $$\mathbb{Z}_{m}, \mathbb{Z}_{m-1}, \mathbb{Z}_{m-2}, \ldots, \mathbb{Z}_{2}, \m
     \end{itemize}
 \end{boxnote}
 
-\PAUSE
-
 \YUKARI でもなんか、
 \YUKARI 言葉っぽくないね？
 \YUI あ、ていうか、文脈自由文法は？ "super-finite" は？
+\YUZUKO あ、そうだったそうだった。忘れてた
+
+\PAUSE
+
+\YUI 正提示から学習できる言語。パターン言語 ${}^{[2]}$
+\YUZUKO お？
+\YUI ンンン？？ $\Sigma A$ …？
+\YUZUKO どれどれ
+\YUI んー。パターン言語の定義らしいんだけど…
+\YUZUKO ああ、たぶんこれ、Kleene閉包だよ
+\YUI こんなヘンな記法が…
+
+\begin{boxnote}
+    非形式的にパターン言語を説明します.
+    パターン言語とはあるパターンによって「説明される」言語です.
+    そしてここで言うパターンとは、要は、「空欄のある文」です.
+    
+    \begin{itemize}
+        \item 例. ``世界が \fbox{　　} でありますように''
+    \end{itemize}
+
+    また空欄には「名前」をつけることができます.
+
+    \begin{itemize}
+        \item 例. ``\fbox{ (x) } が \fbox{ (x) } を \fbox{ (y) } てました''
+    \end{itemize}
+
+    そして、このパターンが「説明する」言語とは、空欄を自由に埋めて出来る文からなる集合のことです.
+    ただし、同じ名前の空欄には同じものを埋めます.
+
+    \begin{itemize}
+        \setlength{\itemsep}{0mm}
+        \item ``私が私を見つめてました''
+        \item ``深淵が深淵を覗いてました''
+        \item 等々
+    \end{itemize}
+\end{boxnote}
+
+\YUKARI あー、なんか、言語って感じ
+\YUI うーん、そうかー？
+\YUI 同じ名前の空欄って、同じものが何度も出現するってことだろ？
+\YUI あんまり自然言語にそういうのって出てこないような
+\YUZUKO 同じ名前の空欄が出てこないものは、正則パターン言語、と言うそうです
+\YUKARI あ、これってもしかして、深さが 1 しかない文脈自由文法？
+\YUI あー、なるほど
+\YUI ん？
 
 \subsection*{参考文献}
 
