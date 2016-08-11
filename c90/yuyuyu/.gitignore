@@ -1,3 +1,7 @@
+*.out
 *.aux
 *.dvi
 *.log
+*.pdf
+*.toc
+!book.pdf

@@ -2,9 +2,8 @@
 \usepackage{amsmath,amssymb,ascmac,color,url}
 \usepackage{plext}
 \usepackage[top=20truemm,bottom=20truemm,left=20truemm,right=20truemm]{geometry}
+\usepackage[dvipdfmx]{graphicx}
 \usepackage[dvipdfmx]{hyperref}
-
-\AtBeginDvi{\special{pdf:tounicode 90ms-RKSJ-UCS2}}
 
 \parindent=0pt
 \input macros.tex
@@ -12,35 +11,21 @@
 \begin{document}
 
 \vspace*{10mm}
-\story{122mm}{ゆゆ掛ける三乗式}{目次}
-
-\hspace*{4mm}
-\begin{minipage}{114mm}
-    \begin{minipage}{70mm}
-        cympfh
-    \end{minipage}
-    \vspace*{-10mm}
-    \begin{flushright}
-        \hyperlink{page.2}{pp.2}
-    \end{flushright}
-
-    \begin{minipage}{70mm}
-        ひもの
-    \end{minipage}
-    \vspace*{-10mm}
-    \begin{flushright}
-        \hyperlink{page.13}{pp.13}
-    \end{flushright}
-\end{minipage}
+\story{122mm}{目次}
+\input toc.tex
 
 \clearpage
 
-\story{112mm}{~~}{@cympfh}
+\story{112mm}{@cympfh}
 \input cympfh/index.tex
 
 \clearpage
 
-\story{78mm}{~~}{ひもの (Twitter:@minamo\_\_i)}
+\story{78mm}{ひもの}
 \input himono/index.tex
+
+\clearpage
+
+\input afterword.tex
 
 \end{document}
